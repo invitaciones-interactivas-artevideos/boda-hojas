@@ -52,7 +52,7 @@
   margin: 0;
   padding: 0;
   overflow-x: hidden;
-  -webkit-text-size-adjust: 100%;
+  height: 100%;
 }
 
 html {
@@ -62,6 +62,7 @@ html {
 body{
     font-family: var(--body-font);
     background: var(--color-fondo);
+    min-height: 100dvh;
     color: var(--color-texto-suelto);
     overflow-x: hidden;
     padding-bottom:56px;
@@ -69,12 +70,28 @@ body{
     position: relative;
 }
 
-.background{
-    position: fixed;
-    inset: 0;
-    z-index: -2;
-    overflow: hidden;
-    background: var(--color-fondo);
+.background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  height: 100dvh; /* 👈 CLAVE moderna */
+  z-index: -2;
+  overflow: hidden;
+  background: var(--color-fondo);
+}
+
+.bg-video-main {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  height: 100dvh; /* 👈 CLAVE */
+  object-fit: cover;
+  object-position: center;
+  transform: translateZ(0); /* 👈 evita jitter en iOS */
 }
 
 .background video,
@@ -97,12 +114,15 @@ body{
 }
 
 .bg-video-main {
-  width: 100%;
-  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  height: 100dvh; /* 👈 CLAVE */
   object-fit: cover;
-  object-position: center center;
-  filter: brightness(1.0) contrast(1.08) saturate(1.08);
-  transform: scale(1.0);
+  object-position: center;
+  transform: translateZ(0); /* 👈 evita jitter en iOS */
 }
 
 .overlay {
