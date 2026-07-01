@@ -52,7 +52,7 @@
   margin: 0;
   padding: 0;
   overflow-x: hidden;
-  height: 100%;
+  /* height: 100%; 👈 ELIMINA O COMENTA ESTA LÍNEA */
 }
 
 html {
@@ -75,23 +75,23 @@ body{
   top: 0;
   left: 0;
   width: 100vw;
-  height: 100vh;
-  height: 100dvh; /* 👈 CLAVE moderna */
+  height: 100vh; /* 👈 Solo mantén el vh tradicional */
   z-index: -2;
   overflow: hidden;
   background: var(--color-fondo);
 }
 
-
- .bg-video-main {
+.bg-video-main {
   position: absolute;
   top: 0;
   left: 0;
-  width: 100%;
-  height: 100dvh;
+  width: 100vw;
+  height: 100vh; /* Mantuvimos solo la medida clásica */
   object-fit: cover;
+  object-position: center;
   pointer-events: none;
-  z-index: 0; /* 👈 importante */
+  z-index: 0;
+  transform: translateZ(0);
 }
 
 .background video,
@@ -799,7 +799,7 @@ Ver ubicación
     </div>
 
     <div class="box">
-      <h2 class="icon-heading" aria-label="Confirmación de asistencia"><i class="fa-regular fa-heart animated-icon"></i>ASISTENCIA</h2>
+      <h2 aria-label="Confirmación de asistencia"><i class="fa-regular fa-heart animated-icon"></i>ASISTENCIA</h2>
       <p class="box-texto">
         Tu presencia<br> 
         es muy importante para nosotros.<br>
@@ -923,10 +923,10 @@ const CONFIG = {
     botonFondo2: "",
     botonTexto: "",
     botonBorde: "",
-    contadorNumeros: "",
-    contadorTexto: "",
-    miniBoxes: "",
-    bordeMiniBoxes: "",
+    contadorNumeros: "#ADFF9C", /*cambia color numeros de la cuenta
+    contadorTexto: "#ADFF9C", /*cambia color de las palabras del contador
+    miniBoxes: "B39B8D", /*cambia color de adentro de lso cuadros de la cuenta
+    bordeMiniBoxes: "#944313", /*cambia color de los bordes de los cuadros
     panelRegalo: "",
     bordePanelRegalo: "",
     overlayArriba: "",
