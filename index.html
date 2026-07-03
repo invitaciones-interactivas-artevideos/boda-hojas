@@ -1501,13 +1501,19 @@ document.getElementById("ceremonyDate").innerText = CONFIG.ceremonyDate;
 document.getElementById("ceremonyTime").innerText = CONFIG.ceremonyTime;
 document.getElementById("ceremonyVenue").innerText = CONFIG.ceremonyVenue;
 document.getElementById("ceremonyAddress").innerText = CONFIG.ceremonyAddress;
-document.getElementById("ceremonyMap").href = CONFIG.ceremonyMap;
+document.getElementById('ceremonyMap').addEventListener('click', function() {
+    window.open('https://maps.app.goo.gl/Bzek87TGzdhmNttB6', '_blank');
+});
 
 document.getElementById("partyDate").innerText = CONFIG.partyDate;
 document.getElementById("partyTime").innerText = CONFIG.partyTime;
 document.getElementById("partyVenue").innerText = CONFIG.partyVenue;
 document.getElementById("partyAddress").innerText = CONFIG.partyAddress;
-document.getElementById("partyMap").href = CONFIG.partyMap;
+// Botón para la fiesta
+// Botón para la fiesta
+document.getElementById('partyMap').addEventListener('click', function() {
+    window.open('https://maps.app.goo.gl/dQHR8jdM4jqv5vxq6', '_blank'); // Agregamos '_blank'
+});
 document.getElementById("dressCodeText").innerHTML = CONFIG.dressCode;
 document.getElementById("confirmLink").href = CONFIG.formularioAsistencia;
 }
